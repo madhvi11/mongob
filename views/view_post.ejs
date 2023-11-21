@@ -1,0 +1,18 @@
+<a href="/post">add post</a>
+<table border=1>
+        <tr>
+            <td>Title</td>
+            <td>Content</td>
+            <td>image</td>
+            <td>Action</td>
+        </tr>
+
+        <% for( var vp of stdata){%>
+            <tr>
+                <td><%= vp.title %></td>
+                <td><%= vp.content %></td>
+                <td><img src="<%= vp.postImage %>" alt=""  height="100px"></td>
+                <td><a href="/post/deletepost/<%= vp.id %>">Delete</a></td>
+            </tr>
+        <% } %>
+    </table>

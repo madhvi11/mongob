@@ -1,0 +1,30 @@
+<a href="/">add details</a>
+<table border=1>
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Gender</td>
+            <td>Hobby</td>
+            <td>City</td>
+            <td>Message</td>
+            <td>image</td>
+            <td>Action</td>
+            
+        </tr>
+        
+        <% for( var ob of stData) { %>
+            <tr>
+                <td><%= ob.name %></td>
+                <td><%= ob.age %></td>
+                <td><%= ob.gender %></td>
+                <td><%= ob.hobby %></td>
+                <td><%= ob.city %></td>
+                <td><%= ob.message %></td>
+                <td><img src="<%= ob.adminImage %>" alt="" height="100px"></td>
+                <td><a href="/deleteStudentdata/<%=ob.id%>">Delete</a> ||
+                    <a href="/updateStudentdata/<%=ob.id%>">Update</a>
+                </td>
+            </tr>
+
+        <% } %>
+    </table>

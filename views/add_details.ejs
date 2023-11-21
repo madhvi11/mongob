@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        body{
+            background-color: rgb(95, 188, 242);
+            font-size: 30px;
+        }
+        input
+        {
+            padding: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+   
+ <a href="/view_details">view</a>
+    <form method="post" action="/addstudent" enctype="multipart/form-data">
+        <table border="1">
+            <tr>
+                <td>Name :</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+
+            <tr>
+                <td>Age :</td>
+                <td><input type="text" name="age"></td>
+            </tr>
+
+            <tr>
+                <td>Select Gender :</td>
+                <td><input type="radio" name="gender" value="male">male
+                    <input type="radio" name="gender" value="female">female
+                </td>
+            </tr>
+
+            <tr>
+                <td>Select Hobby :</td>
+                <td>
+                    <input type="checkbox" name="hobby" value="Reading">Reading
+                    <input type="checkbox" name="hobby" value="Music">Music
+                    <input type="checkbox" name="hobby" value="Adventure">Adventure
+                </td>
+            </tr>
+
+            <% var citydata = ["surat","ahmedabad","rajkot" ,"navsari"] %>
+            <tr>
+                <td>Select City</td>
+                <td>
+                    <select name="city">
+                        <option value="">--select city--</option>
+                        <% citydata.map((v)=>{%>
+                            <option value="<%= v %>"><%= v %></option>
+                        <% }) %>
+                    </select>
+                </td>
+            </tr>
+           
+            <tr>
+                <td>Message :</td>
+                <td><textarea name="message"></textarea></td>
+            </tr>
+
+            <tr>
+                <td>Upload Image :</td>
+                <td><input type="file" name="adminImage"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="add student"></td>
+            </tr>
+        </table>
+    </form>
+
+
+    
+
+</body>
+</html>
